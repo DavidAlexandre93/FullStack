@@ -1,0 +1,19 @@
+- hosts: 0.0.0.0
+  tasks:
+    - name: Ininiar ambiente virtual Python
+      ansible.builtin.command:
+        cmd: python3 -m venv pybitcoin-env
+
+    - name: Criar ambiente virtual Python
+      ansible.builtin.command:
+        cmd: pipenv shell
+
+    - name: Instalar requirements Python
+      ansible.builtin.command:
+        cmd: pip install -r requirements.txt
+
+    - name: Iniciar o servidor uvicorn
+      ansible.builtin.command:
+        cmd: uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
+
+
