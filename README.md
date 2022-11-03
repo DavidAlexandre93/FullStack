@@ -7,3 +7,8 @@ Project FullStack
 - backend
 
 - frontend
+
+Comando git:
+
+- git checkout backend
+- git checkout frontend
